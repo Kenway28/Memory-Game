@@ -1,7 +1,12 @@
 let seconds = document.querySelector(".seconds");
 let minutes = document.querySelector(".minutes");
 let levels = document.querySelectorAll(".levels span");
+let levelsPanel = document.querySelector(".levels");
 let level = document.querySelector(".level");
+let settingsBtn = document.querySelector(".settingsBtn");
+let menuIcons = document.querySelector(".menu-icons");
+let hint = document.querySelector(".hint");
+
 levels.forEach((lvl) => {
   lvl.addEventListener("click", () => {
     levels.forEach((lv) => {
@@ -11,6 +16,7 @@ levels.forEach((lvl) => {
   });
 });
 let board = document.querySelector(".board");
+let TimeCount;
 function gamePlay(size) {
   let level = document.querySelector(".active");
   board.innerHTML = "";
@@ -35,7 +41,7 @@ function gamePlay(size) {
     "cat",
     "envelope",
     "apple-alt",
-    "tv",
+    "carrot",
     "suitcase",
     "euro-sign",
     "fish",
@@ -46,7 +52,12 @@ function gamePlay(size) {
     "snowflake",
     "eye",
     "bolt",
+    "plane",
+    "tree",
+    "horse",
+    "bell",
   ];
+  console.log(keys.length);
   let selectedImages = [];
   while (selectedImages.length < size / 2) {
     let image = keys[Math.floor(Math.random() * keys.length)];
@@ -70,7 +81,7 @@ function gamePlay(size) {
   });
 
   let boxes = Array.from(document.querySelectorAll(".board .box:not(.match)"));
-  
+
   boxes.forEach((box) => {
     box.addEventListener("click", (event) => {
       if (box.classList.contains("match")) {
@@ -96,15 +107,13 @@ function gamePlay(size) {
           }
           if (document.querySelectorAll(".match").length == size) {
             clearInterval(TimeCount);
-            board.className = "board"
-            board.innerHTML = "You Win"
           }
-        }, 400);
+        }, 600);
       }
     });
   });
   let startingTime = new Date().getTime();
-  let TimeCount = setInterval(() => {
+  TimeCount = setInterval(() => {
     let currentPoint = new Date().getTime();
     let time = currentPoint - startingTime;
     let sec = Math.floor((time % 60000) / 1000);
@@ -112,11 +121,25 @@ function gamePlay(size) {
     seconds.innerHTML = sec.toString().padStart(2, 0);
     minutes.innerHTML = min.toString().padStart(2, 0);
   }, 1000);
-
 }
 let start = document.querySelector(".start");
 start.addEventListener("click", () => {
+  clearInterval(TimeCount);
   board.innerHTML = 3;
   let level = document.querySelector(".active");
+  levelsPanel.style.display = "none";
+  menuIcons.style.display = "flex";
+
   gamePlay(level.dataset.size);
+});
+settingsBtn.addEventListener("click", () => {
+  levelsPanel.style.display = "grid";
+  menuIcons.style.display = "none";
+});
+hint.addEventListener("click", () => {
+  let boxes = Array.from(document.querySelectorAll(".board .box:not(.match)"));
+  boxes.forEach((box) => box.classList.toggle("hint"));
+  setTimeout(() => {
+    boxes.forEach((box) => box.classList.toggle("hint"));
+  }, 2000);
 });

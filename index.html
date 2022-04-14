@@ -13,26 +13,26 @@
     <link rel="stylesheet" href="Memory Game.css" />
   </head>
   <body>
-    <div class="container">
-      <aside class="settings-bar">
-        <h2>
-          Time <span class="minutes">00</span>:<span class="seconds">00</span>
-        </h2>
-        <section class="levels">
-          <h3>Level</h3>
-          <span class="active" data-duration="9" data-size="16"
-            >Easy (4 x 4)</span
-          >
-          <span data-duration="7" data-size="20">Normal (5 x 4)</span>
-          <span data-duration="5" data-size="36">Hard (6 x 6)</span>
-          <span data-duration="5" data-size="48">Extreme (8 x 6)</span>
-          <span data-duration="5" data-size="56">Insane (8 x 7)</span>
-        </section>
-        <button class="start">Start</button>
-      </aside>
-
-      <div class="board"></div>
+    <div class="menu-icons">
+      <i class="far fa-clock"></i>
+      <div><span class="minutes">00</span>:<span class="seconds">00</span></div>
+      <i class="fas fa-smile-wink hint"></i>
+      <i class="fas fa-bars settingsBtn"></i>
+      <i class="fas fa-trophy"></i>
     </div>
+    <section class="levels">
+      <h3>Game Levels</h3>
+      <span data-size="16" class="active">4 x 4</span>
+      <span data-size="20">5 x 4</span>
+      <span data-size="30">6 x 5</span>
+      <span data-size="36">6 x 6</span>
+      <span data-size="42">7 x 6</span>
+      <span data-size="48">8 x 6</span>
+      <span data-size="56">8 x 7</span>
+      <button class="start">Start</button>
+    </section>
+
+    <div class="board"></div>
 
     <script src="Memory Game.js"></script>
   </body>
