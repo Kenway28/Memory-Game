@@ -1,28 +1,26 @@
 let seconds = document.querySelector(".seconds");
 let minutes = document.querySelector(".minutes");
-let levels = document.querySelectorAll(".levels span");
-let levelsPanel = document.querySelector(".levels");
+let levels = document.querySelectorAll(".level-list li");
+let settingsOverlay = document.querySelector(".settings-overlay");
 let level = document.querySelector(".level");
-let settingsBtn = document.querySelector(".settingsBtn");
-let menuIcons = document.querySelector(".menu-icons");
 let hint = document.querySelector(".hint");
 
 levels.forEach((lvl) => {
   lvl.addEventListener("click", () => {
     levels.forEach((lv) => {
-      lv.classList.remove("active");
+      lv.classList.remove("level");
     });
-    lvl.classList.add("active");
+    lvl.classList.add("level");
   });
 });
 let board = document.querySelector(".board");
 let TimeCount;
 function gamePlay(size) {
-  let level = document.querySelector(".active");
+  let level = document.querySelector(".level");
   board.innerHTML = "";
   seconds.innerHTML = "00";
   minutes.innerHTML = "00";
-  board.className = `board size-${level.dataset.size}`;
+  board.className = `board size-${level.innerHTML}`;
   let keys = [
     "moon",
     "user",
@@ -126,15 +124,9 @@ let start = document.querySelector(".start");
 start.addEventListener("click", () => {
   clearInterval(TimeCount);
   board.innerHTML = 3;
-  let level = document.querySelector(".active");
-  levelsPanel.style.display = "none";
-  menuIcons.style.display = "flex";
-
-  gamePlay(level.dataset.size);
-});
-settingsBtn.addEventListener("click", () => {
-  levelsPanel.style.display = "grid";
-  menuIcons.style.display = "none";
+  let level = document.querySelector(".level");
+  gamePlay(level.innerHTML);
+  settingsOverlay.toggleAttribute("open");
 });
 hint.addEventListener("click", () => {
   let boxes = Array.from(document.querySelectorAll(".board .box:not(.match)"));
@@ -143,3 +135,13 @@ hint.addEventListener("click", () => {
     boxes.forEach((box) => box.classList.toggle("hint"));
   }, 2000);
 });
+
+
+let toggle = document.getElementById("toggle");
+let indicator = document.querySelector(".indicator");
+toggle.onclick = function () {
+  document.body.classList.toggle("dark");
+  toggle.classList.toggle("active");
+  // settings.mode = document.body.className;
+  // saveSettings(settings);
+};

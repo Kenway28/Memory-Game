@@ -1,0 +1,229 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.dark{
+  background-color: #333 !important;
+  transition: 0.25s;
+}
+
+/* extra small */
+@media (max-width: 767px) {
+  .container {
+    min-width: 100%;
+  }
+
+  .hidden-xs {
+    display: none !important;
+  }
+}
+
+/* small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+
+  .hidden-sm {
+    display: none !important;
+  }
+}
+
+/* medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+
+  .hidden-md {
+    display: none;
+  }
+}
+
+/* larg */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+
+  .hidden-lg {
+    display: none;
+  }
+}
+
+/* container */
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+.flx {
+  display: flex;
+}
+
+.flx .col-2 {
+  flex-basis: 50%;
+}
+
+.grid {
+  display: grid;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* hamburger */
+.hamburger {
+  width: 100px;
+  height: 90px;
+  background-color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.hamburger .line {
+  position: absolute;
+  height: 10%;
+  width: 80%;
+  background-color: #616161;
+  border-radius: 60px;
+  transition: 0.2s all ease-in-out;
+}
+
+.hamburger .line.one {
+  top: 15%;
+}
+
+.hamburger.list .line.one {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.hamburger.list .line.two {
+  transform: rotate(45deg);
+}
+
+.hamburger .line.three {
+  bottom: 15%;
+}
+
+.hamburger.list .line.three {
+  bottom: 50%;
+  transform: translateY(50%) rotate(-45deg);
+}
+
+
+/* arrow up**/
+
+.hamburger.arrow-up .line.one {
+  bottom: 15%;
+  transform: translateY(35%) translateX(-30%) rotate(-45deg);
+  width: 40%;
+}
+
+
+
+.hamburger.arrow-up .line.two {
+  transform: rotate(90deg);
+  width: 70%;
+}
+
+
+
+.hamburger.arrow-up .line.three {
+  top: 15%;
+  transform: translateY(40%) translateX(30%) rotate(45deg);
+  width: 40%;
+}
+
+
+/* arrow down**/
+.hamburger.arrow-down .line.one {
+  top: 71%;
+  transform: translateX(-30%) rotate(45deg);
+  width: 40%;
+}
+
+
+
+.hamburger.arrow-down .line.two {
+  transform: rotate(90deg);
+  width: 70%;
+}
+
+
+
+.hamburger.arrow-down .line.three {
+  top: 71%;
+  transform: translateX(30%) rotate(-45deg);
+  width: 40%;
+}
+
+/*toggle button*/
+#toggle {
+  display: block;
+  position: relative;
+  width: 320px;
+  height: 160px;
+  border-radius: 160px;
+
+  transition: 0.5s;
+  cursor: pointer;
+  box-shadow: inset 0 2px 60px rgba(0, 0, 0, 0.1),
+    inset 0 2px 8px rgba(0, 0, 0, 0.1), inset 0 -4px 8px rgba(0, 0, 0, 0.05);
+}
+
+#toggle.active {
+  background: #fff;
+  box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1),
+    inset 0 8px 8px rgba(0, 0, 0, 0.1), inset 0 -4px 4px rgba(0, 0, 0, 0.05);
+}
+
+#toggle .indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 160px;
+  height: 160px;
+  background: linear-gradient(to bottom, #444, #222);
+  border-radius: 50%;
+  transform: scale(0.9);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5),
+    inset 0 4px 4px rgba(255, 255, 255, 0.2),
+    inset 0 -4px 4px rgba(255, 255, 255, 0.2);
+  transition: 0.25s;
+
+  /*****/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5.5em;
+}
+
+#toggle.active .indicator {
+  left: 160px;
+  background:#ccc;
+  /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1),
+    inset 0 4px 4px rgba(255, 255, 255, 1),
+    inset 0 -4px 4px rgba(255, 255, 255, 1); */
+}

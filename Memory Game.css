@@ -28,29 +28,27 @@ body {
 
 
 .menu-icons {
-  font-size: 1.5em;
+  font-size: 20px;
   position: absolute;
   top: 20px;
-  right: -80px;
-  background-color: #fff;
-  border-radius: 100px;
-  display: none;
+  right: 80px;
+  /* background-color: #fff; */
+  /* border-radius: 100px; */
+  display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 0px 15px #6161613a, 0px 0px 25px #bbdefbab;
+  /* box-shadow: 0px 0px 15px #6161613a, 0px 0px 25px #bbdefbab; */
   gap: 5px;
   transition: all .25s ease;
-  padding: 0 10px;
+  /* padding: 0 10px; */
 }
 
-.menu-icons:hover {
-  right: 10px;
-}
 
 .menu-icons * {
   color: #616161 !important;
   width: 40px;
-  height: 40px;
+  /* height: 30px; */
+  /* background: red; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -104,11 +102,11 @@ body {
   color: #fff;
 }
 
-.levels button {
+.set button {
   grid-column: span 3;
   font-size: 1.1em;
   margin: 0 auto;
-  width: 100%;
+  width: 50%;
   background-color: #4caf50;
   color: #fff;
   padding: 15px;
@@ -139,7 +137,7 @@ body {
   align-items: center;
   align-content: center;
   perspective: 1000px;
-  gap: 8px;
+  gap: 4px;
   font-weight: normal;
   align-items: center;
   width: fit-content;
@@ -228,7 +226,7 @@ body {
   transform-style: preserve-3d;
   transform: rotateY(180deg);
   box-shadow: 0px 2xp 15px #979696;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .selected {
@@ -249,7 +247,7 @@ body {
   color: #333;
   text-transform: uppercase;
   text-align: center;
-  border-radius: 20px;
+  border-radius: 10px;
   box-shadow: 0px 2px 5px 0px #6161616c;
 }
 
@@ -363,4 +361,140 @@ body {
 
 .hint {
   transform: rotateY(0deg);
+}
+
+body.dark .match .face.fas {
+  color: #fcfcfc9e !important;
+}
+body.dark .back {
+  background: linear-gradient(39deg, #9375cac5, #47c49cc5) !important;
+}
+.hamburger {
+  background-color: transparent !important;
+  position: absolute !important;
+  top: 20px;
+  right: 20px;
+  width: 40px !important;
+  height: 30px !important;
+  z-index: 20;
+}
+
+body.dark .hamburger .line {
+  transition: 0.25s;
+  background-color: #fafafa !important;
+}
+
+.settings-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #bbdefb;
+  z-index: 5;
+  transform: translateY(-100%);
+  transition: .2s ease-in-out;
+  display: flex;
+  justify-content: center;
+
+}
+
+body.dark .settings-overlay {
+  background-color: #333 !important;
+  transition: 0.25s;
+  color: #fafafa !important;
+}
+
+.settings-overlay[open] {
+  /* background-color: #4caf50; */
+  transform: translateY(0%);
+}
+
+.settings-box {
+  width: 500px;
+  margin-top: 120px;
+}
+
+.settings-box h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 3em;
+  color: #333;
+}
+
+body.dark .settings-box h1 {
+  transition: 0.25s;
+  color: #fafafa !important;
+}
+
+.settings-box .set {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px 0;
+  color: #333;
+}
+
+.settings-box h2 {
+  font-size: 1.6em;
+  color: #333;
+}
+
+body.dark .settings-box h2 {
+  transition: 0.25s;
+  color: #fafafa !important;
+}
+
+.settings-box .level-list {
+  display: flex;
+  gap: 5px;
+  font-size: 25px;
+}
+
+.settings-box .level-list li {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+body.dark .settings-box .level-list li {
+  color: #fff !important;
+}
+
+.settings-box .level-list li.level {
+  background-color: #4caf50;
+  color: #fff;
+  border-radius: 50%;
+}
+
+/* toggle button */
+#toggle {
+
+  width: 60px !important;
+  height: 30px !important;
+  border-radius: 70px !important;
+
+}
+
+#toggle.active {
+  background: #4caf4f !important;
+  /* box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1),
+    inset 0 8px 8px rgba(0, 0, 0, 0.1), inset 0 -4px 4px rgba(0, 0, 0, 0.05); */
+}
+
+#toggle .indicator {
+
+  width: 30px !important;
+  height: 30px !important;
+  background: #fff !important;
+  transform: scale(0.8) !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1),
+    inset 0 1px 1px rgba(255, 255, 255, 1),
+    inset 0 -1px 1px rgba(255, 255, 255, 1) !important;
+}
+
+#toggle.active .indicator {
+  left: 30px !important;
 }

@@ -11,29 +11,56 @@
     />
 
     <link rel="stylesheet" href="Memory Game.css" />
+    <link rel="stylesheet" href="My Framework.css" />
   </head>
   <body>
+    <div class="hamburger">
+      <div class="line one"></div>
+      <div class="line two"></div>
+      <div class="line three"></div>
+    </div>
+    <div class="settings-overlay">
+      <div class="settings-box">
+        <h1>Settings</h1>
+        <div class="set">
+          <h2>Dark Mode</h2>
+          <div id="toggle" data-mode="light">
+            <span class="indicator"></span>
+          </div>
+        </div>
+        <div class="set">
+          <h2>Level</h2>
+          <ul class="level-list">
+            <li data-size="16" class="level">16</li>
+            <li data-size="20">20</li>
+            <li data-size="30">30</li>
+            <li data-size="36">36</li>
+            <li data-size="42">42</li>
+            <li data-size="48">48</li>
+            <li data-size="56">56</li>
+          </ul>
+        </div>
+        <div class="set">
+          <button class="start">Start</button>
+        </div>
+      </div>
+    </div>
     <div class="menu-icons">
-      <i class="far fa-clock"></i>
       <div><span class="minutes">00</span>:<span class="seconds">00</span></div>
-      <i class="fas fa-smile-wink hint"></i>
-      <i class="fas fa-bars settingsBtn"></i>
+      <i class="fas fa-eye hint"></i>
       <i class="fas fa-trophy"></i>
     </div>
-    <section class="levels">
-      <h3>Game Levels</h3>
-      <span data-size="16" class="active">4 x 4</span>
-      <span data-size="20">5 x 4</span>
-      <span data-size="30">6 x 5</span>
-      <span data-size="36">6 x 6</span>
-      <span data-size="42">7 x 6</span>
-      <span data-size="48">8 x 6</span>
-      <span data-size="56">8 x 7</span>
-      <button class="start">Start</button>
-    </section>
 
     <div class="board"></div>
 
     <script src="Memory Game.js"></script>
+    <script>
+      let burger = document.querySelector(".hamburger");
+      var settingsPanel = document.querySelector(".settings-overlay");
+      burger.addEventListener("click", () => {
+        burger.classList.toggle("arrow-up");
+        settingsPanel.toggleAttribute("open");
+      });
+    </script>
   </body>
 </html>
