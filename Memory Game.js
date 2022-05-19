@@ -1,3 +1,5 @@
+import { hamburgerMenu } from "./My Framework.js";
+
 let seconds = document.querySelector(".seconds");
 let minutes = document.querySelector(".minutes");
 let levels = document.querySelectorAll(".level-list li");
@@ -136,10 +138,12 @@ hint.addEventListener("click", () => {
   }, 2000);
 });
 
-
 let toggle = document.getElementById("toggle");
 let indicator = document.querySelector(".indicator");
 toggle.onclick = function () {
   document.body.classList.toggle("dark");
   toggle.classList.toggle("active");
 };
+
+
+hamburgerMenu("arrow-up");

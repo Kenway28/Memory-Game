@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Memory Game</title>
 
-
     <link rel="stylesheet" href="My Framework.css" />
     <link rel="stylesheet" href="Memory Game.css" />
   </head>
@@ -16,7 +15,7 @@
       <div class="line two"></div>
       <div class="line three"></div>
     </div>
-    <div class="settings-overlay">
+    <div class="hamburger-menu">
       <div class="settings-box">
         <h1>Settings</h1>
         <div class="set">
@@ -50,14 +49,7 @@
 
     <div class="board"></div>
 
-    <script src="Memory Game.js"></script>
-    <script>
-      let burger = document.querySelector(".hamburger");
-      var settingsPanel = document.querySelector(".settings-overlay");
-      burger.addEventListener("click", () => {
-        burger.classList.toggle("arrow-up");
-        settingsPanel.toggleAttribute("open");
-      });
-    </script>
+    <script src="My Framework.js" type="module"></script>
+    <script src="Memory Game.js" type="module"></script>
   </body>
 </html>
