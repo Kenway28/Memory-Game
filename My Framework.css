@@ -1,3 +1,4 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css";
 * {
   box-sizing: border-box;
   margin: 0;
@@ -219,11 +220,8 @@ ul {
   align-items: center;
   font-size: 5.5em;
 }
-
 #toggle.active .indicator {
   left: 160px;
   background:#ccc;
-  /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1),
-    inset 0 4px 4px rgba(255, 255, 255, 1),
-    inset 0 -4px 4px rgba(255, 255, 255, 1); */
 }
+/* todo : import  font awesome icons in here by @import nn */

@@ -142,6 +142,4 @@ let indicator = document.querySelector(".indicator");
 toggle.onclick = function () {
   document.body.classList.toggle("dark");
   toggle.classList.toggle("active");
-  // settings.mode = document.body.className;
-  // saveSettings(settings);
 };
