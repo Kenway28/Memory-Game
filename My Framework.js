@@ -7,4 +7,15 @@ function hamburgerMenu(hamburgerType) {
   });
 }
 
-export {hamburgerMenu};
+function darkMode() {
+  let toggle = document.querySelector("#toggle");
+  let indicator = document.querySelector(".indicator");
+
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    toggle.classList.toggle("active");
+  });
+}
+
+export { hamburgerMenu };
+export { darkMode };

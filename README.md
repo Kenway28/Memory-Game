@@ -1,10 +1,15 @@
-### Update 1.1
+### Update 1.1.2
 
-- redesign Start Menu
-- Add Add Dark Mode
-- Update Game Script
+- update Script
+- fixe Some Problems
 
 ### Update 1.1.1
 
 - update Script
-- Fixe Some Problems
+- fixe Some Problems
+
+### Update 1.1
+
+- redesign Start Menu
+- add Add Dark Mode
+- update Game Script

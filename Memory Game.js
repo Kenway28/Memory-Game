@@ -1,9 +1,9 @@
-import { hamburgerMenu } from "./My Framework.js";
+import { hamburgerMenu, darkMode } from "./My Framework.js";
 
 let seconds = document.querySelector(".seconds");
 let minutes = document.querySelector(".minutes");
 let levels = document.querySelectorAll(".level-list li");
-let settingsOverlay = document.querySelector(".settings-overlay");
+let settingsOverlay = document.querySelector(".hamburger-menu");
 let level = document.querySelector(".level");
 let hint = document.querySelector(".hint");
 
@@ -138,12 +138,6 @@ hint.addEventListener("click", () => {
   }, 2000);
 });
 
-let toggle = document.getElementById("toggle");
-let indicator = document.querySelector(".indicator");
-toggle.onclick = function () {
-  document.body.classList.toggle("dark");
-  toggle.classList.toggle("active");
-};
-
-
 hamburgerMenu("arrow-up");
+
+darkMode();
